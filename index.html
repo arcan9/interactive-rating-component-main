@@ -1,49 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive rating component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Interactive rating component</title>
 
-  <!-- Rating state start -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 
-  How did we do?
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        display: flex;
+        min-height: 100vh;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        max-width: 700px;
+      }
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Rating state start -->
 
-  1 2 3 4 5
+      <h1>How did we do?</h1>
 
-  Submit
+      Please let us know how we did with your support request. All feedback is
+      appreciated to help us improve our offering!
 
-  <!-- Rating state end -->
+      <div class="d-flex justify-content-center mt-4">
+        <button class="m-3">1</button>
+        <button class="m-3">2</button>
+        <button class="m-3">3</button>
+        <button class="m-3">4</button>
+        <button class="m-3">5</button>
+      </div>
+      <div class="d-flex justify-content-center mt-2">
+        <button>Submit</button>
+      </div>
 
-  <!-- Thank you state start -->
+      <!-- Rating state end -->
 
-  You selected <!-- Add rating here --> out of 5
+      <!-- Thank you state start -->
+      <br />
+      <br />
+      <p>
+        You selected
+        <!-- Add rating here -->
+        out of 5 Thank you! We appreciate you taking the time to give a rating.
+        If you ever need more support, don't hesitate to get in touch!
+      </p>
 
-  Thank you!
+      <!-- Thank you state end -->
 
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </div>
+    </div>
+  </body>
 </html>
