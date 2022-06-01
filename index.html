@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -21,82 +19,124 @@
       crossorigin="anonymous"
     />
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <!-- CSS -->
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
       body {
         display: flex;
+        flex-direction: column;
         min-height: 100vh;
         margin: 0 auto;
         text-align: center;
         justify-content: center;
         align-items: center;
-        max-width: 500px;
+        color: #fff;
+        background-color: hsl(216, 12%, 8%);
+        font-family: "Overpass", sans-serif;
       }
 
       button {
         border: none;
       }
 
+      h1 {
+        font-size: 30px;
+        text-align: left;
+      }
+
       .attribution {
         font-size: 11px;
         text-align: center;
       }
+
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
+
       .btn-ratings {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         border-radius: 50%;
-        height: 40px;
-        width: 40px;
+        height: 45px;
+        width: 45px;
+        font-size: small;
+        background: #272e37;
+        color: hsl(217, 12%, 63%);
       }
+
       .btn-submit {
         border-radius: 20px;
+        background: hsl(25, 97%, 53%);
+        color: #fff;
+        font-size: small;
+        letter-spacing: 2px;
+        text-align: center;
+      }
+
+      .content-container {
+        max-width: 405px;
+        padding: 30px;
+        border-radius: 20px;
+        background-image: linear-gradient(180deg, #2a333e, #1b252e, #181f28);
+      }
+
+      .icon-star {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        background: #343d49;
+      }
+
+      .text-gray {
+        color: hsl(217, 12%, 63%);
+        text-align: left;
       }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="content-container">
       <!-- Rating state start -->
+      <div class="icon-star mb-4"><img src="images/icon-star.svg" /></div>
 
       <h1>How did we do?</h1>
 
-      Please let us know how we did with your support request. All feedback is
-      appreciated to help us improve our offering!
+      <p class="text-gray">
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
 
-      <div class="d-flex justify-content-center mt-4">
+      <div class="d-flex justify-content-between mt-4">
         <button class="btn-ratings m-2">1</button>
         <button class="btn-ratings m-2">2</button>
         <button class="btn-ratings m-2">3</button>
         <button class="btn-ratings m-2">4</button>
         <button class="btn-ratings m-2">5</button>
       </div>
-      <div class="d-flex justify-content-center mt-2">
-        <button class="btn-submit col-6 pt-2 pb-2">Submit</button>
+      <div class="d-flex justify-content-center mt-4">
+        <button class="btn-submit col pt-2 pb-2">SUBMIT</button>
       </div>
 
       <!-- Rating state end -->
 
       <!-- Thank you state start -->
-      <br />
-      <br />
-      <p>
-        You selected
-        <!-- Add rating here -->
-        out of 5 Thank you! We appreciate you taking the time to give a rating.
-        If you ever need more support, don't hesitate to get in touch!
-      </p>
+
+      <!-- <p class="text-gray">
+        You selected x out of 5 Thank you! We appreciate you taking the time to
+        give a rating. If you ever need more support, don't hesitate to get in
+        touch!
+      </p> -->
 
       <!-- Thank you state end -->
-
-      <div class="attribution mt-5">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
-      </div>
+    </div>
+    <div class="attribution mt-5">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
     </div>
   </body>
 </html>
