@@ -27,9 +27,14 @@
         display: flex;
         min-height: 100vh;
         margin: 0 auto;
+        text-align: center;
         justify-content: center;
         align-items: center;
-        max-width: 700px;
+        max-width: 500px;
+      }
+
+      button {
+        border: none;
       }
 
       .attribution {
@@ -38,6 +43,17 @@
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
+      }
+      .btn-ratings {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+      .btn-submit {
+        border-radius: 20px;
       }
     </style>
   </head>
@@ -51,14 +67,14 @@
       appreciated to help us improve our offering!
 
       <div class="d-flex justify-content-center mt-4">
-        <button class="m-3">1</button>
-        <button class="m-3">2</button>
-        <button class="m-3">3</button>
-        <button class="m-3">4</button>
-        <button class="m-3">5</button>
+        <button class="btn-ratings m-2">1</button>
+        <button class="btn-ratings m-2">2</button>
+        <button class="btn-ratings m-2">3</button>
+        <button class="btn-ratings m-2">4</button>
+        <button class="btn-ratings m-2">5</button>
       </div>
       <div class="d-flex justify-content-center mt-2">
-        <button>Submit</button>
+        <button class="btn-submit col-6 pt-2 pb-2">Submit</button>
       </div>
 
       <!-- Rating state end -->
@@ -75,7 +91,7 @@
 
       <!-- Thank you state end -->
 
-      <div class="attribution">
+      <div class="attribution mt-5">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
