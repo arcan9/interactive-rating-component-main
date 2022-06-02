@@ -22,6 +22,11 @@
     <!-- CSS -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+      :root {
+        --button-color: hsl(25, 97%, 53%);
+      }
+
       body {
         display: flex;
         flex-direction: column;
@@ -50,7 +55,7 @@
       }
 
       .attribution a {
-        color: hsl(228, 45%, 44%);
+        color: hsl(217, 12%, 63%);
       }
 
       .btn-ratings {
@@ -63,15 +68,27 @@
         font-size: small;
         background: #272e37;
         color: hsl(217, 12%, 63%);
+        transition: all 200ms ease-in-out;
+      }
+
+      .btn-ratings:hover {
+        background: var(--button-color);
+        color: #fff;
       }
 
       .btn-submit {
         border-radius: 20px;
-        background: hsl(25, 97%, 53%);
+        background: var(--button-color);
         color: #fff;
         font-size: small;
         letter-spacing: 2px;
         text-align: center;
+        transition: all 200ms ease-in-out;
+      }
+
+      .btn-submit:hover {
+        background: #fff;
+        color: var(--button-color);
       }
 
       .content-container {
@@ -136,7 +153,8 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by
+      <a href="https://github.com/arcan9" target="_blank">Ashelle Cancio</a>.
     </div>
   </body>
 </html>
