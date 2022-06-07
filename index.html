@@ -77,8 +77,9 @@
         color: #fff;
       }
 
-      .btn-ratings:active {
+      .active-btn-ratings {
         background: var(--light-grey);
+        color: #fff;
       }
 
       .btn-submit {
@@ -164,8 +165,7 @@
     <script>
       function ThankYouState() {
         let ratingHTML = document.querySelector(".rating-state");
-        rateOne.style.backgroundColor = `hsl(217, 12%, 63%)`;
-        rateOne.style.color = `#fff`;
+        rateOne.classList.add("active-btn-ratings");
       }
 
       let rateOne = document.querySelector(".btn-number-1");
