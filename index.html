@@ -130,7 +130,7 @@
     <div class="content-container">
       <!-- Rating state start -->
       <div class="rating-state">
-        <div class="icon-star mb-4"><img src="images/icon-star.svg" /></div>
+        <div class="icon-star mb-4"><img src="/images/icon-star.svg" /></div>
 
         <h1>How did we do?</h1>
 
@@ -173,7 +173,18 @@
 
       function manipulateDom() {
         if (rateOne.classList.contains("active-btn-ratings")) {
-          alert("1");
+          let ratingPageElement = document.querySelector(".rating-state");
+
+          let ratingPageHTML = `<div class="elem-center>`;
+          ratingPageHTML += `<img src="/images/illustration-thank-you.svg" />
+            <div class="user-rating">You selected 1 out of 5</div>
+            <h1>Thank You!<h1>
+            <p class="text-gray">
+            We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!
+            </p>`;
+
+          ratingPageHTML += `</div>`;
+          ratingPageElement.innerHTML = ratingPageHTML;
         } else {
           alert("No rating selected");
         }
@@ -183,7 +194,7 @@
       rateOne.addEventListener("click", ThankYouState);
 
       let submitButton = document.querySelector(".btn-submit");
-      submitButton.addEventListener("click", manipulateDom, false);
+      submitButton.addEventListener("click", manipulateDom);
     </script>
   </body>
 </html>
