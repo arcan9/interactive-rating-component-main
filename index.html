@@ -164,8 +164,11 @@
     <!-- Thank You state -->
     <script>
       function ThankYouState() {
-        let ratingHTML = document.querySelector(".rating-state");
-        rateOne.classList.add("active-btn-ratings");
+        if (rateOne.classList.contains("active-btn-ratings")) {
+          rateOne.classList.remove("active-btn-ratings");
+        } else {
+          rateOne.classList.add("active-btn-ratings");
+        }
       }
 
       function manipulateDom() {
