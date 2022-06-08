@@ -168,8 +168,19 @@
         rateOne.classList.add("active-btn-ratings");
       }
 
+      function manipulateDom() {
+        if (rateOne.classList.contains("active-btn-ratings")) {
+          alert("1");
+        } else {
+          alert("No rating selected");
+        }
+      }
+
       let rateOne = document.querySelector(".btn-number-1");
       rateOne.addEventListener("click", ThankYouState);
+
+      let submitButton = document.querySelector(".btn-submit");
+      submitButton.addEventListener("click", manipulateDom, false);
     </script>
   </body>
 </html>
