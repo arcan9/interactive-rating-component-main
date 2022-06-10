@@ -28,11 +28,15 @@
         --light-grey: hsl(217, 12%, 63%);
       }
 
+      html {
+        box-sizing: border-box;
+      }
+
       body {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        margin: 0 auto;
+        margin: 0;
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -104,6 +108,10 @@
         background-image: linear-gradient(180deg, #2a333e, #1b252e, #181f28);
       }
 
+      .div-hidden {
+        display: none;
+      }
+
       .icon-star {
         display: flex;
         justify-content: center;
@@ -124,12 +132,12 @@
       }
 
       .user-rating {
+        display: inline-block;
         color: var(--button-color);
         background: #343d49;
         padding: 5px;
         border-radius: 20px;
         width: 200px;
-        margin: auto;
       }
 
       @media screen and (max-width: 1000px) {
@@ -146,7 +154,6 @@
         <div class="icon-star mb-4">
           <img src="/images/icon-star.svg" />
         </div>
-        <img src="" id="header-img" />
 
         <h1>How did we do?</h1>
 
@@ -168,7 +175,20 @@
 
         <!-- Rating state end -->
       </div>
+
+      <!-- Thank You state start -->
+      <div class="thank-you-state div-hidden">
+        <img src="/images/illustration-thank-you.svg" />
+        <div class="user-rating m-4">You selected 1 out of 5</div>
+        <h1 class="text-center">Thank You!</h1>
+        <p class="text-gray text-center">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </div>
+      <!-- Thank You state end -->
     </div>
+
     <!-- Attributions -->
     <div class="attribution mt-5">
       Challenge by
@@ -187,27 +207,15 @@
         }
       }
 
-      function updateDOM() {
-        let imgElement = document.getElementById("header-img");
-        let imgThankYou = "/images/illustration-thank-you.svg";
-        console.log(imgThankYou);
+      function toggleHiddenState() {
+        let ratingPageElement = document.querySelector(".rating-state");
+        let thankYouElement = document.querySelector(".thank-you-state");
+
         if (rateOne.classList.contains("active-btn-ratings")) {
-          let ratingPageElement = document.querySelector(".rating-state");
-
-          let ratingPageHTML = `<div class="rating-state">`;
-
-          ratingPageHTML += `
-            <div class="user-rating m-4">You selected 1 out of 5</div>
-            <h1 class="text-center">Thank You!</h1>
-            <p class="text-gray text-center">
-            We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!
-            </p>`;
-
-          ratingPageHTML += `</div>`;
-          ratingPageElement.innerHTML =
-            imgElement.setAttribute("src", imgThankYou) + ratingPageHTML;
+          thankYouElement.classList.remove("div-hidden");
+          ratingPageElement.classList.add("div-hidden");
         } else {
-          alert("No rating selected");
+          alert("no rating");
         }
       }
 
@@ -215,7 +223,7 @@
       rateOne.addEventListener("click", activateButton);
 
       let submitButton = document.querySelector(".btn-submit");
-      submitButton.addEventListener("click", updateDOM);
+      submitButton.addEventListener("click", toggleHiddenState);
     </script>
   </body>
 </html>
