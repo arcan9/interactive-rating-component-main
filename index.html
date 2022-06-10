@@ -114,9 +114,22 @@
         background: #343d49;
       }
 
+      .img-thank-you {
+        display: none;
+      }
+
       .text-gray {
         color: var(--light-grey);
         text-align: left;
+      }
+
+      .user-rating {
+        color: var(--button-color);
+        background: #343d49;
+        padding: 5px;
+        border-radius: 20px;
+        width: 200px;
+        margin: auto;
       }
 
       @media screen and (max-width: 1000px) {
@@ -131,7 +144,7 @@
       <!-- Rating state start -->
       <div class="rating-state">
         <div class="icon-star mb-4"><img src="/images/icon-star.svg" /></div>
-        <img src="" id="img-thank-you" />
+        <img src="/images/illustration-thank-you.svg" class="img-thank-you" />
 
         <h1>How did we do?</h1>
 
@@ -175,19 +188,17 @@
       function updateDOM() {
         if (rateOne.classList.contains("active-btn-ratings")) {
           let ratingPageElement = document.querySelector(".rating-state");
-          let ratingPageHTML = `<div class="elem-center>`;
+          let ratingPageHTML = `<div class="rating-state">`;
 
           ratingPageHTML += `
-            <div class="user-rating">You selected 1 out of 5</div>
-            <h1>Thank You!<h1>
-            <p class="text-gray">
+            <div class="user-rating m-4">You selected 1 out of 5</div>
+            <h1 class="text-center">Thank You!</h1>
+            <p class="text-gray text-center">
             We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!
             </p>`;
 
           ratingPageHTML += `</div>`;
-          ratingPageElement.innerHTML = document.querySelector(
-            "#img-thank-you"
-          ).src = "images/illustration-thank-you.svg" + ratingPageHTML;
+          ratingPageElement.innerHTML = ratingPageHTML;
         } else {
           alert("No rating selected");
         }
