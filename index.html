@@ -143,8 +143,10 @@
     <div class="content-container">
       <!-- Rating state start -->
       <div class="rating-state">
-        <div class="icon-star mb-4"><img src="/images/icon-star.svg" /></div>
-        <img src="/images/illustration-thank-you.svg" class="img-thank-you" />
+        <div class="icon-star mb-4">
+          <img src="/images/icon-star.svg" />
+        </div>
+        <img src="" id="header-img" />
 
         <h1>How did we do?</h1>
 
@@ -186,8 +188,12 @@
       }
 
       function updateDOM() {
+        let imgElement = document.getElementById("header-img");
+        let imgThankYou = "/images/illustration-thank-you.svg";
+        console.log(imgThankYou);
         if (rateOne.classList.contains("active-btn-ratings")) {
           let ratingPageElement = document.querySelector(".rating-state");
+
           let ratingPageHTML = `<div class="rating-state">`;
 
           ratingPageHTML += `
@@ -198,7 +204,8 @@
             </p>`;
 
           ratingPageHTML += `</div>`;
-          ratingPageElement.innerHTML = ratingPageHTML;
+          ratingPageElement.innerHTML =
+            imgElement.setAttribute("src", imgThankYou) + ratingPageHTML;
         } else {
           alert("No rating selected");
         }
