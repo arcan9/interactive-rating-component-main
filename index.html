@@ -220,7 +220,7 @@
       function toggleHiddenState() {
         let ratingPageElement = document.querySelector(".rating-state");
         let thankYouElement = document.querySelector(".thank-you-state");
-        let selectedButton = document.classList.contains("active-btn-ratings");
+        let selectedButton = this.classList.contains(".active-btn-ratings");
 
         if (selectedButton) {
           thankYouElement.classList.remove("div-hidden");
