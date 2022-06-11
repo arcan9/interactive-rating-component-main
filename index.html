@@ -179,7 +179,9 @@
       <!-- Thank You state start -->
       <div class="thank-you-state div-hidden">
         <img src="/images/illustration-thank-you.svg" />
-        <div class="user-rating m-4">You selected 1 out of 5</div>
+        <div class="user-rating m-4">
+          You selected <span class="number-rating"></span> out of 5
+        </div>
         <h1 class="text-center">Thank You!</h1>
         <p class="text-gray text-center">
           We appreciate you taking the time to give a rating. If you ever need
@@ -197,30 +199,59 @@
       >. Coded by
       <a href="https://github.com/arcan9" target="_blank">Ashelle Cancio</a>.
     </div>
-    <!-- Thank You state -->
+
     <script>
+      // Add color change on rating button as its active state
+      // When another button is clicked, previous button reverts to original color
       function activateButton() {
-        if (rateOne.classList.contains("active-btn-ratings")) {
-          rateOne.classList.remove("active-btn-ratings");
-        } else {
-          rateOne.classList.add("active-btn-ratings");
-        }
+        buttons.forEach(function (btn) {
+          btn.classList.remove("active-btn-ratings");
+        });
+        this.classList.add("active-btn-ratings");
+        // if (btn.classList.contains("active-btn-ratings")) {
+        //   btn.classList.remove("active-btn-ratings");
+        // } else {
+        //   btn.classList.add("active-btn-ratings");
+        // }
       }
+
+      let buttons = document.querySelectorAll(".btn-ratings");
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", activateButton, false);
+      }
+
+      // Submit button checks for an active rating button
+      // Toggles hidden Thank You state
 
       function toggleHiddenState() {
         let ratingPageElement = document.querySelector(".rating-state");
         let thankYouElement = document.querySelector(".thank-you-state");
+        let selectedButton = document.activeElement.querySelector(
+          ".active-btn-ratings"
+        );
 
-        if (rateOne.classList.contains("active-btn-ratings")) {
-          thankYouElement.classList.remove("div-hidden");
-          ratingPageElement.classList.add("div-hidden");
+        if (selectedButton) {
+          alert("YES");
         } else {
           alert("no rating");
         }
-      }
 
-      let rateOne = document.querySelector(".btn-number-1");
-      rateOne.addEventListener("click", activateButton);
+        // buttons.forEach(function (btn) {
+        //   if (btn.classList.contains("active-btn-ratings")) {
+        //     thankYouElement.classList.remove("div-hidden");
+        //     ratingPageElement.classList.add("div-hidden");
+        //   } else if (!btn.classList.contains("active-btn-ratings")) {
+        //     alert("no rating");
+        //   }
+        // });
+
+        // if (buttons.classList.contains("active-btn-ratings")) {
+        //   thankYouElement.classList.remove("div-hidden");
+        //   ratingPageElement.classList.add("div-hidden");
+        // } else {
+        //   alert("no rating");
+        // }
+      }
 
       let submitButton = document.querySelector(".btn-submit");
       submitButton.addEventListener("click", toggleHiddenState);
