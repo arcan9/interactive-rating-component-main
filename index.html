@@ -201,18 +201,13 @@
     </div>
 
     <script>
-      // Add color change on rating button as its active state
+      // Add color change on rating button when clicked
       // When another button is clicked, previous button reverts to original color
       function activateButton() {
         buttons.forEach(function (btn) {
           btn.classList.remove("active-btn-ratings");
         });
         this.classList.add("active-btn-ratings");
-        // if (btn.classList.contains("active-btn-ratings")) {
-        //   btn.classList.remove("active-btn-ratings");
-        // } else {
-        //   btn.classList.add("active-btn-ratings");
-        // }
       }
 
       let buttons = document.querySelectorAll(".btn-ratings");
@@ -220,37 +215,19 @@
         buttons[i].addEventListener("click", activateButton, false);
       }
 
-      // Submit button checks for an active rating button
-      // Toggles hidden Thank You state
-
+      // Submit checks for an active rating button
+      // Toggles Thank You state
       function toggleHiddenState() {
         let ratingPageElement = document.querySelector(".rating-state");
         let thankYouElement = document.querySelector(".thank-you-state");
-        let selectedButton = document.activeElement.querySelector(
-          ".active-btn-ratings"
-        );
+        let selectedButton = document.classList.contains("active-btn-ratings");
 
         if (selectedButton) {
-          alert("YES");
+          thankYouElement.classList.remove("div-hidden");
+          ratingPageElement.classList.add("div-hidden");
         } else {
           alert("no rating");
         }
-
-        // buttons.forEach(function (btn) {
-        //   if (btn.classList.contains("active-btn-ratings")) {
-        //     thankYouElement.classList.remove("div-hidden");
-        //     ratingPageElement.classList.add("div-hidden");
-        //   } else if (!btn.classList.contains("active-btn-ratings")) {
-        //     alert("no rating");
-        //   }
-        // });
-
-        // if (buttons.classList.contains("active-btn-ratings")) {
-        //   thankYouElement.classList.remove("div-hidden");
-        //   ratingPageElement.classList.add("div-hidden");
-        // } else {
-        //   alert("no rating");
-        // }
       }
 
       let submitButton = document.querySelector(".btn-submit");
