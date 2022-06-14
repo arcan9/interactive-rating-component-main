@@ -203,14 +203,14 @@
     <script>
       // Add color change on rating button when clicked
       // When another button is clicked, previous button reverts to original color
-      let activateButton = (event) => {
+      const activateButton = (event) => {
         buttons.forEach((btn) => {
           btn.classList.remove("active-btn-ratings");
         });
         event.target.classList.add("active-btn-ratings");
       };
 
-      let buttons = document.querySelectorAll(".btn-ratings");
+      const buttons = document.querySelectorAll(".btn-ratings");
       for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener(
           "click",
@@ -221,18 +221,21 @@
 
       // Submit checks for an active rating button
       // Toggles Thank You state
-      function toggleHiddenState() {
-        let ratingPageElement = document.querySelector(".rating-state");
-        let thankYouElement = document.querySelector(".thank-you-state");
-        let selectedButton = this.classList.contains(".active-btn-ratings");
+      const toggleHiddenState = () => {
+        const ratingPageElement = document.querySelector(".rating-state");
+        const thankYouElement = document.querySelector(".thank-you-state");
+
+        const selectedButton = document.querySelector(".active-btn-ratings");
 
         if (selectedButton) {
+          document.querySelector(".number-rating").innerHTML =
+            selectedButton.innerHTML;
           thankYouElement.classList.remove("div-hidden");
           ratingPageElement.classList.add("div-hidden");
         } else {
           alert("no rating");
         }
-      }
+      };
 
       let submitButton = document.querySelector(".btn-submit");
       submitButton.addEventListener("click", toggleHiddenState);
