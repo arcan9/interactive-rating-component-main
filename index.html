@@ -203,16 +203,20 @@
     <script>
       // Add color change on rating button when clicked
       // When another button is clicked, previous button reverts to original color
-      function activateButton() {
-        buttons.forEach(function (btn) {
+      let activateButton = (event) => {
+        buttons.forEach((btn) => {
           btn.classList.remove("active-btn-ratings");
         });
-        this.classList.add("active-btn-ratings");
-      }
+        event.target.classList.add("active-btn-ratings");
+      };
 
       let buttons = document.querySelectorAll(".btn-ratings");
       for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", activateButton, false);
+        buttons[i].addEventListener(
+          "click",
+          (event) => activateButton(event),
+          false
+        );
       }
 
       // Submit checks for an active rating button
